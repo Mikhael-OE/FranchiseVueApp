@@ -9,6 +9,18 @@ const model = ref([
         items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
     },
     {
+        label: 'Vendors',
+        items: [{ label: 'Deals', icon: 'pi pi-fw pi-tag', to: '/deal/list' },
+                { label: 'Item Search', icon: 'pi pi-fw pi-search', to: '/items/search' }] 
+    },
+    {
+        label: 'Allowances',
+        items: [{ label: 'Allowance Percentage', icon: 'pi pi-fw pi-percentage', to: '/allowance/percentages' },
+                { label: 'Invoices', icon: 'pi pi-fw pi-book', to: '/member/invoices' },
+                { label: 'Earned Allowance', icon: 'pi pi-fw pi-dollar', to: '/allowance/earned' },
+                { label: 'Progress vs Target', icon: 'pi pi-fw pi-chart-line', to: '/allowance/progress' }]
+    },
+    {
         label: 'UI Components',
         items: [
             { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
@@ -176,11 +188,11 @@ const model = ref([
             <app-menu-item v-if="!item.separator" :item="item" :index="i"></app-menu-item>
             <li v-if="item.separator" class="menu-separator"></li>
         </template>
-        <li>
+        <!--<li>
             <a href="https://www.primefaces.org/primeblocks-vue/#/" target="_blank">
                 <img src="/layout/images/banner-primeblocks.png" alt="Prime Blocks" class="w-full mt-3" />
             </a>
-        </li>
+        </li>-->
     </ul>
 </template>
 

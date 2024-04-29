@@ -18,15 +18,28 @@ onBeforeUnmount(() => {
 });
 
 const logoUrl = computed(() => {
-    return `layout/images/${layoutConfig.darkTheme.value ? 'logo-white' : 'logo-dark'}.svg`;
+    //return `layout/images/${layoutConfig.darkTheme.value ? 'logo-white' : 'logo-dark'}.svg`;
+    return 'layout/images/banner-woermann-franchise.jpg';
 });
 
 const onTopBarMenuButton = () => {
     topbarMenuActive.value = !topbarMenuActive.value;
 };
-const onSettingsClick = () => {
+const onNotificationClick = () => {
     topbarMenuActive.value = false;
     router.push('/documentation');
+};
+const onCartClick = () => {
+    topbarMenuActive.value = false;
+    router.push('/order');
+};
+const onMembersClick = () => {
+    topbarMenuActive.value = false;
+    router.push('/member/details');
+};
+const onSettingsClick = () => {
+    topbarMenuActive.value = false;
+    router.push('/member/password');
 };
 const topbarMenuClasses = computed(() => {
     return {
@@ -62,25 +75,29 @@ const isOutsideClicked = (event) => {
 
 <template>
     <div class="layout-topbar">
-        <router-link to="/" class="layout-topbar-logo">
-            <img :src="logoUrl" alt="logo" />
-            <span>SAKAI</span>
-        </router-link>
 
         <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle()">
             <i class="pi pi-bars"></i>
         </button>
+
+        <router-link to="/" class="layout-topbar-logo">
+            <img :src="logoUrl" alt="logo" />
+        </router-link>
 
         <button class="p-link layout-topbar-menu-button layout-topbar-button" @click="onTopBarMenuButton()">
             <i class="pi pi-ellipsis-v"></i>
         </button>
 
         <div class="layout-topbar-menu" :class="topbarMenuClasses">
-            <button @click="onTopBarMenuButton()" class="p-link layout-topbar-button">
-                <i class="pi pi-calendar"></i>
-                <span>Calendar</span>
+            <button @click="onNotificationClick()" class="p-link layout-topbar-button">
+                <i class="pi pi-bell"></i>
+                <span>Notifications</span>
             </button>
-            <button @click="onTopBarMenuButton()" class="p-link layout-topbar-button">
+            <button @click="onCartClick()" class="p-link layout-topbar-button">
+                <i class="pi pi-shopping-cart"></i>
+                <span>Cart</span>
+            </button>
+            <button @click="onMembersClick()" class="p-link layout-topbar-button">
                 <i class="pi pi-user"></i>
                 <span>Profile</span>
             </button>

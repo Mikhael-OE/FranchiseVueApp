@@ -14,6 +14,56 @@ const router = createRouter({
                     component: () => import('@/views/Dashboard.vue')
                 },
                 {
+                    path: '/allowance/percentages',
+                    name: 'AllowancePercentages',
+                    component: () => import('@/views/allowance/Percentages.vue')
+                },
+                {
+                    path: '/allowance/earned',
+                    name: 'AllowanceEarned',
+                    component: () => import('@/views/allowance/Earned.vue')
+                },
+                {
+                    path: '/allowance/progress',
+                    name: 'TargetProgress',
+                    component: () => import('@/views/allowance/TargetProgress.vue')
+                },
+                {
+                    path: '/deal/list',
+                    name: 'Deals',
+                    component: () => import('@/views/Deals.vue')
+                },
+                {
+                    path: '/order',
+                    name: 'OrderStart',
+                    component: () => import('@/views/order/Order.vue')
+                },
+                {
+                    path: '/items/search',
+                    name: 'ItemSearch',
+                    component: () => import('@/views/ItemSearch.vue')
+                },
+                {
+                    path: '/vendor/list',
+                    name: 'Vendors',
+                    component: () => import('@/views/Vendors.vue')
+                },
+                {
+                    path: '/member/invoices',
+                    name: 'Invoices',
+                    component: () => import('@/views/member/Invoices.vue')
+                },
+                {
+                    path: '/member/details',
+                    name: 'MemberDetails',
+                    component: () => import('@/views/member/Details.vue')
+                },
+                {
+                    path: '/member/password',
+                    name: 'PasswordChange',
+                    component: () => import('@/views/member/PasswordChange.vue')
+                },
+                {
                     path: '/uikit/formlayout',
                     name: 'formlayout',
                     component: () => import('@/views/uikit/FormLayout.vue')
